@@ -1,0 +1,122 @@
+/* Review a chapter, explore a world, and always know what the next action does. */
+.flight-app{--feedback-duration:120ms;--surface:#0a1224;--edge:#88b0d940}
+.flight-app button{cursor:default;transition:background-color var(--feedback-duration) ease-out,color var(--feedback-duration) ease-out,border-color var(--feedback-duration) ease-out}
+.flight-app a{cursor:pointer}
+.flight-app button:active:not(:disabled){background-color:#72ead52b}
+.flight-app button:disabled{opacity:.45;cursor:default}
+.flight-app :focus-visible{outline:2px solid #98ffea;outline-offset:3px}
+.flight-app ::selection{background:#80ffe849;color:#fff}
+.flight-identity,.flight-links a,.flight-links button{min-height:44px}
+.flight-start{display:flex;align-items:center;gap:9px;min-height:44px;margin-top:12px;font:11px var(--mono);color:#b1ffe9;pointer-events:auto!important}
+.flight-start:hover{color:#fff}
+.flight-map{width:280px}
+.flight-destinations button{min-height:66px;gap:11px}
+.flight-destinations strong{font-size:14px;letter-spacing:0}
+.flight-destinations small{max-width:218px;font-size:10px;line-height:1.5;text-wrap:pretty}
+.flight-destinations kbd{font-size:10px}
+.flight-map-footer{color:#a6c7d9}
+.flight-speed>strong,.flight-stats b,.flight-coordinate,.flight-nearest small,.course-copy small{font-variant-numeric:tabular-nums}
+.flight-course{display:block;width:390px;padding:12px 16px}
+.course-copy{display:flex;align-items:center;gap:12px}
+.course-copy>span:nth-child(2){flex:1}
+.course-copy button{min-height:44px;white-space:nowrap;font:10px var(--mono);color:#c5ffec;padding:8px;border:1px solid #77dcd947}
+.course-copy small{font-size:10px;line-height:1.5}
+.flight-course progress{display:block;width:100%;height:3px;margin-top:9px;border:0;border-radius:0;background:#7bddce29;appearance:none}
+.flight-course progress::-webkit-progress-bar{background:#7bddce29}
+.flight-course progress::-webkit-progress-value{background:#83ffe3}
+.flight-course progress::-moz-progress-bar{background:#83ffe3}
+.flight-utilities button{min-width:44px;min-height:44px;justify-content:center}
+.flight-reading-hint{font:11px var(--mono);color:#a6bdce;display:flex;gap:24px;align-items:center}
+.flight-reading-hint span{color:#95e4d6;font-size:10px}.flight-reading-hint kbd{padding:4px 6px;border:1px solid var(--edge)}
+.flight-docked .flight-instruments,.flight-docked .flight-nearest,.flight-docked .flight-touch-controls{visibility:hidden}
+.flight-notice{position:absolute;z-index:15;bottom:72px;left:50%;transform:translateX(-50%);max-width:560px;width:calc(100% - 40px);font:12px/1.6 Manrope;color:#d2e4ed;pointer-events:none}
+.flight-notice:empty{display:none}
+.flight-notice:not(:empty){display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0a1729f5;border:1px solid #78d6d666;pointer-events:auto}
+.flight-notice button{min-width:44px;min-height:44px;display:grid;place-items:center;margin-left:auto;flex-shrink:0}
+.flight-app .dossier-top{flex-shrink:0;min-height:62px}
+.flight-app .dossier-top>span{font-size:10px;color:#b4cfdb;letter-spacing:.8px}
+.dossier-undock{display:flex;align-items:center;gap:8px;min-height:44px;padding:5px 8px;font:11px var(--mono);color:#afc9d9}
+.flight-app .dossier-scroll{min-height:0;flex:1}
+.flight-app .dossier-bottom{flex-shrink:0;padding:8px 20px;margin-top:0;background:#0c1726;border-top:1px solid #a5e5df3a;box-shadow:0 -12px 20px #08101b59;min-height:62px}
+.flight-app .dossier-bottom a,.flight-app .dossier-bottom button{min-height:44px;font:11px var(--mono)}
+.flight-app .dossier-bottom .dossier-next{color:var(--planet-color)}
+.dossier h2,.brief-body h2{ text-wrap:balance }
+.dossier p,.brief-body p{ text-wrap:pretty }
+.overview-metrics{margin-bottom:24px}
+.brief-modal{overflow:hidden}
+.brief-frame{height:calc(100% - 48px);max-height:calc(100svh - 100px);display:flex;flex-direction:column}
+.brief-header,.brief-nav,.brief-footer{flex-shrink:0}
+.brief-header{padding:20px 32px}
+.brief-header .eyebrow{font-size:10px}
+.brief-header .icon-button{min-width:44px;min-height:44px}
+.brief-nav{font-size:11px;padding:0 32px;min-height:54px;overscroll-behavior-x:contain}
+.brief-nav a{display:flex;align-items:center;min-height:44px}
+.brief-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#a4d1d44a transparent}
+.brief-body section{scroll-margin-top:24px}
+.brief-body #brief-overview{--planet-color:#baffdc}
+.brief-footer{padding:8px 30px;border-top:1px solid var(--edge)}
+.brief-footer a{min-height:44px}
+@media(max-width:1100px){.flight-map{width:250px}.flight-docked .flight-map{display:none}.flight-docked .flight-map.is-open{display:block;top:auto;bottom:72px;z-index:12;background:#091121f5;padding:17px;border:1px solid #70d8d877}.flight-docked .flight-utilities .flight-map-toggle{display:flex}.flight-keyboard{gap:10px;font-size:7px}.flight-utilities{gap:8px}}
+@media(max-width:760px){
+ .flight-header{padding:0 12px;gap:7px}.flight-identity{gap:7px;letter-spacing:0;font-size:9px}.flight-identity small{font-size:6px;letter-spacing:0}.flight-logo{display:none}
+ .flight-links{gap:4px;font-size:10px}.flight-links button span{display:inline}.flight-links button{padding:0 5px;gap:5px}.flight-links a{min-width:44px;justify-content:center}.flight-links a>span{display:none}.flight-links .flight-contact{color:#9cfce6}
+ .flight-sector{top:93px}.flight-sector small{display:block;font-size:11px;max-width:270px;line-height:1.6}.flight-start{margin-top:7px;font-size:10px}
+ .flight-map{width:min(300px,calc(100vw - 30px));max-height:calc(100svh - 145px);overflow-y:auto;overscroll-behavior:contain;bottom:64px;padding:17px;background:#091121fa}
+ .flight-destinations button{min-height:65px}.flight-destinations strong{font-size:14px}.flight-destinations small{font-size:11px;max-width:220px}.flight-map>p{font-size:11px;line-height:1.6}.flight-panel-heading{font-size:9px;letter-spacing:.4px}
+ .flight-course{width:calc(100% - 40px);bottom:230px;padding:10px 12px}.course-copy{gap:8px}.course-copy small{font-size:9px}.course-copy button{font-size:9px;padding:6px}.flight-course progress{margin-top:6px}
+ .flight-utilities{gap:6px}.flight-utilities .flight-map-toggle{margin:0}.flight-footer{padding:0 12px}.flight-reading-hint{display:none}
+ .flight-app .dossier{bottom:70px}.flight-app .dossier-top{padding:6px 14px;min-height:56px}.flight-app .dossier-top>span{font-size:10px}.flight-app .dossier-bottom{padding:6px 15px;gap:8px;min-height:58px}.flight-app .dossier-bottom a,.flight-app .dossier-bottom button{font-size:10px}
+ .flight-app .dossier p{font-size:13px;line-height:1.8}.flight-app .timeline p{font-size:12px!important}.flight-app .timeline-date{font-size:8px}.flight-app .dossier-metric>span{font-size:10px;line-height:1.5}.flight-app .overview-metrics strong{font-size:28px}
+ .flight-notice{bottom:116px;font-size:11px}.flight-help .icon-button{min-width:44px;min-height:44px}.flight-help p{font-size:12px}
+ .brief-modal{padding:10px}.brief-frame{margin:0 auto;height:100%;max-height:calc(100svh - 20px)}.brief-header{padding:16px 18px}.brief-header .eyebrow{font-size:9px}.brief-nav{padding:0 18px;font-size:10px;gap:18px;min-height:49px}.brief-body{padding:0 20px}.brief-body p,.brief-body .evidence-item p,.brief-body .fit-item p{font-size:13px}.brief-body .dossier-lead{font-size:14px}.brief-body .timeline p{font-size:12px!important}.brief-body .timeline-date{font-size:8px}.brief-body .small-note{font-size:11px}.brief-body .dossier-metric>span{font-size:10px;line-height:1.5}.brief-body .eval-heading,.brief-body .eval-compare small,.brief-body .eval-footer{font-size:8px}.brief-footer{font-size:11px;padding:4px 15px;gap:20px}
+}
+@media(max-width:360px){.flight-identity{font-size:8px}.flight-identity small{font-size:5px}.flight-links{font-size:9px}.flight-links button{gap:4px;padding:0 3px}.flight-header{padding:0 10px}.flight-sector small{font-size:10px}.flight-app .dossier h2{font-size:26px}.brief-header h2{font-size:18px}.brief-footer{gap:12px}}
+@media(prefers-reduced-motion:reduce){.flight-app *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media(min-width:761px){.flight-map{background:linear-gradient(90deg,#081020b8,#081020de);padding-left:12px;padding-right:12px}}
+@media(max-width:760px){.brief-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px;padding:0 18px;overflow:visible;white-space:normal}.brief-nav a{min-height:44px}.brief-nav a:last-child{grid-column:span 2}.brief-body .overview-metrics strong{font-size:30px}}
+.copyable-email{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:12px}
+.copyable-email .email-inline{margin:0;min-height:44px}
+.copyable-email button{display:grid;place-items:center;min-width:44px;min-height:44px;color:#afdcd7}
+.copyable-email [role=status]{font:11px Manrope;color:#b9d7d5;flex-basis:100%}
+.copyable-email [role=status]:empty{display:none}
+.flight-app .chart-row{font-size:10px}.flight-app .chart-caption{font-size:9px}
+.flight-app .shipped-badge{font-size:9px;letter-spacing:.5px}
+.flight-app .takeaway>span,.flight-app .brief-body .takeaway>span{font-size:9px;letter-spacing:.6px}
+.flight-app .eval-heading,.flight-app .eval-footer,.flight-app .eval-compare small{font-size:9px;line-height:1.5}
+.flight-app .eval-status{font-size:8px}
+.flight-app .policy-flow b{font-size:9px}
+@media(max-width:760px){.flight-app .eval-footer{flex-wrap:wrap;gap:8px}.flight-app .eval-heading{letter-spacing:0;gap:7px}.flight-app .brief-body .eval-compare>span{font-size:32px}}
+.flight-app .project-tabs button,.flight-app .icon-button,.flight-help .primary-button{min-height:44px}
+.flight-app .icon-button{min-width:44px}
+@media(max-width:760px){.flight-waypoint::after{content:'';position:absolute;inset:-9px;pointer-events:auto}}
+.project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 22px}
+.project-actions .project-link{margin:0}
+.project-code{display:flex;align-items:center;gap:8px;min-height:44px;color:#afd5df;font:11px var(--mono)}
+.brief-footer{gap:24px}
+@media(max-width:760px){.brief-footer{gap:12px;padding:4px 12px}}
+/* Short screens get a compact cockpit and a scrollable planet drawer. */
+@media(max-height:600px) and (min-width:560px){
+ .flight-header{height:62px;padding:0 16px;gap:12px}.flight-identity{font-size:10px;gap:10px}.flight-identity small{font-size:7px}.flight-logo{font-size:18px}.flight-header-center{display:none}
+ .flight-sector{top:78px;left:16px;max-width:260px}.flight-sector strong{font-size:21px;margin:8px 0}.flight-sector small{display:none}.flight-start{margin-top:0;font-size:10px}
+ .flight-map,.flight-docked .flight-map{display:none}
+ .flight-map.is-open,.flight-docked .flight-map.is-open{display:block;top:auto;bottom:64px;right:16px;width:320px;max-height:calc(100svh - 138px);overflow-y:auto;overscroll-behavior:contain;background:#091121fa;padding:16px;border:1px solid #70d8d877;z-index:12}
+ .flight-map>p{line-height:1.5;margin:8px 0}.flight-destinations button{min-height:60px}.flight-map-footer{margin-top:8px}
+ .flight-footer{height:54px;padding:0 16px}.flight-keyboard,.flight-reading-hint{display:none}.flight-utilities{width:100%;justify-content:space-between;gap:10px}.flight-utilities .flight-map-toggle{display:flex;margin:0}
+ .launch-prompt{left:16px;bottom:72px;transform:none;max-width:240px}.launch-prompt>.eyebrow,.launch-prompt>p{display:none}.launch-prompt .flight-launch{min-width:200px;font-size:13px;padding:13px 16px}
+ .flight-instruments{left:16px;bottom:74px;width:190px}.flight-speed>strong{font-size:30px}.flight-speed small{font-size:8px}.flight-meter,.flight-stats,.flight-coordinate{display:none}.flight-waiting .flight-instruments{display:none}
+ .flight-nearest{display:none}.flight-reticle{top:44%}
+ .flight-touch-controls{display:flex;left:auto;right:16px;bottom:67px;width:auto;gap:8px}.flight-touch-controls button{pointer-events:auto;touch-action:none;display:flex;align-items:center;justify-content:center;gap:6px;min-width:74px;min-height:44px;padding:10px;border:1px solid #8fb2d959;background:#091829e6;color:#b7d9e9;font:9px var(--mono)}
+ .flight-docked .flight-touch-controls{display:none}
+ .flight-course{top:78px;right:16px;bottom:auto;left:auto;transform:none;width:320px}.flight-dock{top:78px;right:16px;bottom:auto;left:auto;transform:none;padding:12px;font-size:12px}
+ .flight-app .dossier{top:74px;bottom:64px;left:16px;right:16px;width:auto}.flight-app .dossier-top{min-height:48px;padding:2px 16px}.flight-app .dossier-bottom{min-height:48px;padding:2px 16px}.flight-app .dossier-scroll{padding:16px 22px}
+ .pause-prompt{left:50%;transform:translateX(-50%);bottom:74px;padding:14px 24px}.pause-prompt>.eyebrow{margin-bottom:8px}.pause-prompt>p{margin-top:8px}
+ .flight-notice{bottom:64px}.flight-help{max-height:calc(100svh - 32px)}
+}
+@media(max-height:600px){
+ .brief-modal{padding:8px}.brief-frame{margin:0 auto;height:100%;max-height:calc(100svh - 16px)}
+ .brief-header{padding:6px 18px;min-height:56px}.brief-header .eyebrow{font-size:8px}.brief-header h2{font-size:18px}.brief-header h2>span{display:inline;font-size:inherit;margin:0}
+ .brief-nav{min-height:44px;padding:0 18px;gap:16px;font-size:10px}
+ .brief-body{padding:0 24px}.brief-body section{padding:20px 0;scroll-margin-top:16px}.brief-body h2{font-size:29px}
+ .brief-footer{padding:0 16px;min-height:44px}
+}
+@media(max-height:600px) and (min-width:560px){.brief-nav{display:flex;overflow-x:auto;white-space:nowrap}.brief-nav a:last-child{grid-column:auto}}
